@@ -1,3 +1,7 @@
+  /**
+     *
+     *课时管理编辑模块
+     */
 define(['jquery', 'text!tpls/courseEditTime.html', 'common/myModal', 'api', 'template'], function ($, courseEditTimeTpl, myModal, api, template) {
     return function (id,calkback) {
         api.post('course/chapter/edit', { ct_id: id }, function (res) {

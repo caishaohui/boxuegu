@@ -18,7 +18,6 @@ require.config({
         // 
         upload: '../assets/uploadify/jquery.uploadify',
         //ueditor配置文件
-        
         ueConf: '../assets/ueditor/ueditor.config',
         ueAll: '../assets/ueditor/ueditor.all',
         ZeroClipboard:'../assets/ueditor/third-party/zeroclipboard/ZeroClipboard',
@@ -45,7 +44,7 @@ require.config({
 
 require(['jquery', 'teacher/list', 'cookie', 
      'common/personal','chart/index','course/list', 'bootstrap',
-     'text'], function ($, teacherList, cookie,   personal,chartIndex,courseList) {
+     'text'], function ($, teacherList, cookie,  personal,chartIndex,courseList) {
         // var one = sessionStorage.getItem('name')
         var one = $.cookie('name')
         // console.log(one);

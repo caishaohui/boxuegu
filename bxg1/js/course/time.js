@@ -1,4 +1,9 @@
 
+/**
+*
+*课时信息模块
+*/
+
 define(['jquery', 'text!tpls/courseTimeList.html', 'api',
     'template', 'course/editTime'], function ($, courseTimeListTpl, api, template, editTime) {
         return function fn(id) {
@@ -7,7 +12,7 @@ define(['jquery', 'text!tpls/courseTimeList.html', 'api',
                 var courseTimeList = template.render(courseTimeListTpl, res.result)
                 var $courseTimeList = $(courseTimeList).on('click', '.btn-edit', function () {
                     var ct_id = $(this).parent().attr('ct_id')
-                    editTime(ct_id,function(){
+                    editTime(ct_id, function () {
                         fn(id)
                     })
                 })
