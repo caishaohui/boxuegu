@@ -44,7 +44,8 @@ require.config({
 })
 
 require(['jquery', 'teacher/list', 'cookie', 
-    'course/list', 'course/add', 'common/personal','chart/index', 'bootstrap', 'text'], function ($, teacherList, cookie, courseList, courseAdd, personal,chartIndex) {
+     'common/personal','chart/index','course/list', 'bootstrap',
+     'text'], function ($, teacherList, cookie,   personal,chartIndex,courseList) {
         // var one = sessionStorage.getItem('name')
         var one = $.cookie('name')
         // console.log(one);
@@ -69,13 +70,14 @@ require(['jquery', 'teacher/list', 'cookie',
             } else if ($(this).hasClass('course-manager')) {
                 // 课程管理
                 
-                alert(1)
+               courseList()
             } else if ($(this).hasClass('add-course')) {
+                
                 courseAdd()
                 // 添加课程
             } else if ($(this).hasClass('course-category')) {
                 // 课程分类
-                categoryList()
+                // categoryList()
             } else if ($(this).hasClass('chart')) {
              chartIndex()
             //  图表统计

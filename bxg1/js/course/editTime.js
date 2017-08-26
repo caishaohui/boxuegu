@@ -1,24 +1,23 @@
-define(['jquery', 'text!tpls/courseTimeEdit.html','api','template'], function ($, courseTimeEditTpl,api,template) {
-    $.fn.myModal = function (id) {
-        id && $(id).remove()
-        this.appendTo('body').modal()
-        return this;
-    }
+define(['jquery', 'text!tpls/courseEditTime.html', 'common/myModal', 'api', 'template'], function ($, courseEditTimeTpl, myModal, api, template) {
     return function (id,calkback) {
-        api.get('course/chapter/edit', { ct_id: id}, function (res) {
-            // console.log(res);
-            var courseTimeEdit=template.render(courseTimeEditTpl,res.result)
-            var $courseTimeEdit=$(courseTimeEdit).on('submit','form',function(e){
+        api.post('course/chapter/edit', { ct_id: id }, function (res) {
+            console.log(res);
+            // 序列号模板
+            var courseEditTime = template.render(courseEditTimeTpl, res.result)
+            var $courseEditTime = $(courseEditTime).on('submit', 'form', function (e) {
+                // 阻止submit的默认行为
                 e.preventDefault()
-                var formData=$(this).serialize()
+                // 提交表单
+                var formData = $(this).serialize()
                 // alert(formData)
-                api.post('course/chapter/modify',formData,function(res){
-                    // console.log(res);
-                    $courseTimeEdit.modal('hide')
+                api.post('course/chapter/modify', formData, function (res) {
+                    console.log(res);
+                    $courseEditTime.modal('hide')
                     calkback()
                 })
             }).myModal('#modalCourseTimeEdit')
-
+            // 代码简化,把模板添加到body中同时删除模板重复
         })
+
     }
 })

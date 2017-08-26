@@ -1,7 +1,7 @@
 <div class="modal fade" id="modalCourseTimeEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" >
+      <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">编辑课时</h4>
       </div>
@@ -11,55 +11,67 @@
             <label class="col-sm-2 control-label">课时名称</label>
             <div class="col-sm-10">
               <input type="text" name='ct_name' value="{{ct_name}}" class="form-control">
-              <input type="hidden" name='ct_id' value="{{ct_id}}" class="form-control">
               <input type="hidden" name='ct_cs_id' value="{{ct_cs_id}}" class="form-control">
+              <input type="hidden" name='ct_id' value="{{ct_id}}" class="form-control">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">课时介绍</label>
             <div class="col-sm-10">
-              <textarea class="form-control"  name="ct_brief"  rows="3">{{ct_brief}}</textarea>
+              <textarea class="form-control" name="ct_brief" rows="3">{{ct_brief}}</textarea>
             </div>
           </div>
+
           <div class="form-group">
             <label class="col-sm-2 control-label">是否免费</label>
             <div class="col-sm-10">
+              {{if (ct_is_free==1)}}
+                            <label class="radio-inline">
+  <input type="radio" name="ct_is_free" value="{{ct_is_free}}" checked="checked"> 是
+</label>
               <label class="radio-inline">
-                 <input type="radio" name="ct_is_free" value="1" checked='ckecked'>是
-              </label>
+  <input type="radio" name="ct_is_free" value="{{ct_is_free}}" > 否
+</label>
+              {{else}}
+                            <label class="radio-inline">
+  <input type="radio" name="ct_is_free" value="{{ct_is_free}}" > 是
+</label>
               <label class="radio-inline">
-                 <input type="radio" name="ct_is_free" value="0">否
-              </label>
+  <input type="radio" name="ct_is_free" value="{{ct_is_free}}"  checked="checked"> 否
+</label>
+              {{/if}}
+
             </div>
           </div>
+
           <div class="form-group">
             <label class="col-sm-2 control-label">视频地址</label>
             <div class="col-sm-10">
-              <input type="text" name="ct_video" value="{{ct_video}}" class="form-control data-time">
+              <input type="text" name='ct_video' value="{{ct_video}}" class="form-control">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">视频分钟</label>
             <div class="col-sm-10">
-              <input type="text" name="ct_minutes" value="{{ct_minutes}}" class="form-control data-time">
+              <input type="text" name='ct_minutes' value="{{ct_minutes}}" class="form-control">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">视频秒钟</label>
             <div class="col-sm-10">
-              <input type="text" name="ct_seconds" value="{{ct_seconds}}" class="form-control data-time">
+              <input type="text" name='ct_seconds' value="{{ct_seconds}}" class="form-control">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">推荐学习时长</label>
             <div class="col-sm-10">
-              <input type="text" name="ct_recommend_duration" value="{{ct_recommend_duration}}" class="form-control data-time">
+              <input type="text" name='ct_recommend_duration' value="{{ct_recommend_duration}}" class="form-control">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label"></label>
             <div class="col-sm-10 col-sm-offset-5">
-              <button type="submit" class="btn btn-success">提交</button>
+              <button type="submit" class="btn btn-success ">提交</button>
             </div>
           </div>
         </form>

@@ -1,10 +1,10 @@
 <div>
-    <ol class="breadcrumb ">
-        <li><a href="#">课时管理</a></li>
+    <ol class="breadcrumb">
+        <li><a href="#">课时管理 </a></li>
         <li class="active">课时列表</li>
     </ol>
     <div class="row">
-        <div class="col-md-1 col-md-offset-10" ct_id={{cs_id}}>
+        <div class="col-md-1 col-md-offset-10">
             <button class="btn btn-success btn-add">添加课时</button>
         </div>
     </div>
@@ -14,12 +14,16 @@
             <div class="media">
                 <div class="media-left">
                     <a href="#">
-                         <img class="media-object" src="{{cs_cover}}" width="240" height="120" alt="...">
-                 </a>
+                        <img class="media-object" src="{{cs_cover}}" width="240" height="120" alt="...">
+                     </a>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading">课程名称:{{cs_name}}</h4>
-                    <h4 class="media-heading">讲师名称:{{tc_name}}</h4>
+                    <h4 class="media-heading">
+                        课程名称:{{cs_name}}
+                    </h4>
+                    <h4 class="media-heading">
+                        讲师名称:{{tc_name}}
+                    </h4>
                 </div>
             </div>
         </div>
@@ -47,6 +51,5 @@
             </tbody>
         </table>
     </div>
-
 
 </div>
